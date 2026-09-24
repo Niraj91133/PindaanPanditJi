@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { siteConfig } from "@/data/siteConfig";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -16,8 +17,8 @@ export function openBookingModal(defaultService?: string) {
 }
 
 export function getWhatsAppUrl(customText?: string) {
-  const phone = "919835214789";
-  const defaultText = "नमस्ते पंडित जी, मुझे गया जी में पिंडदान / श्राद्ध विधि के बारे में मार्गदर्शन चाहिए।";
+  const phone = siteConfig.whatsappNumber;
+  const defaultText = `नमस्ते पंडित जी (${siteConfig.pandit.name}), मुझे गया जी में पिंडदान / श्राद्ध विधि के बारे में मार्गदर्शन चाहिए।`;
   const message = encodeURIComponent(customText || defaultText);
   return `https://wa.me/${phone}?text=${message}`;
 }

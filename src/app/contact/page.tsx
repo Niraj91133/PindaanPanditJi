@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageCircle, MapPin, Mail, Clock, ShieldCheck } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, Clock, ShieldCheck, Instagram, Facebook } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { getWhatsAppUrl } from "@/lib/utils";
 import BookingForm from "@/components/BookingForm";
@@ -99,6 +99,34 @@ export default function ContactPage() {
                     <strong className="block text-xs uppercase text-secondary-text">परामर्श समय / Hours</strong>
                     <span>प्रातः ०६:०० बजे से रात्रि ०९:०० बजे तक (6:00 AM - 9:00 PM)</span>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Channels */}
+              <div className="pt-4 border-t border-border-subtle flex flex-col space-y-2.5">
+                <span className="text-xs font-semibold text-secondary-text uppercase tracking-wider">
+                  सोशल मीडिया पर जुड़ें (Social Media):
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={siteConfig.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 text-xs font-medium transition-colors"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                    <span>Instagram (@anandpanditgayaji)</span>
+                  </a>
+
+                  <a
+                    href={siteConfig.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 text-xs font-medium transition-colors"
+                  >
+                    <Facebook className="w-3.5 h-3.5" />
+                    <span>Facebook Profile</span>
+                  </a>
                 </div>
               </div>
             </div>

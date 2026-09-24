@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageCircle, MapPin, Mail, Shield } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, Shield, Instagram, Facebook } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
@@ -36,6 +36,31 @@ export default function Footer() {
               <span className="text-xs text-accent-gold font-medium">
                 {panditName}
               </span>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-3 pt-2">
+              <a
+                href={siteConfig.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 text-xs font-medium transition-colors"
+                title="Instagram Profile"
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                <span>anandpanditgayaji</span>
+              </a>
+
+              <a
+                href={siteConfig.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 text-xs font-medium transition-colors"
+                title="Facebook Profile"
+              >
+                <Facebook className="w-3.5 h-3.5" />
+                <span>Facebook</span>
+              </a>
             </div>
           </div>
 
@@ -91,7 +116,7 @@ export default function Footer() {
             </div>
             <a
               href={`tel:${siteConfig.whatsappNumber}`}
-              className="flex items-center space-x-2.5 text-xs text-primary-text hover:text-accent-gold transition-colors"
+              className="flex items-center space-x-2.5 text-xs text-primary-text hover:text-accent-gold transition-colors font-medium"
             >
               <Phone className="w-4 h-4 text-accent-gold flex-shrink-0" />
               <span>{siteConfig.phoneDisplay}</span>
@@ -100,10 +125,10 @@ export default function Footer() {
               href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2.5 text-xs text-emerald-800 hover:text-emerald-900 font-medium transition-colors"
+              className="flex items-center space-x-2.5 text-xs text-emerald-800 hover:text-emerald-900 font-semibold transition-colors"
             >
               <MessageCircle className="w-4 h-4 flex-shrink-0" />
-              <span>WhatsApp Pandit Ji</span>
+              <span>WhatsApp Pandit Ji ({siteConfig.phoneDisplay})</span>
             </a>
             <div className="flex items-center space-x-2.5 text-xs text-secondary-text">
               <Mail className="w-4 h-4 text-accent-gold flex-shrink-0" />
