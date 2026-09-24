@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F9F7F2;
+    --bg-card: #FFFDF9;
+    --text-primary: #25231F;
+    --text-secondary: #706B63;
+    --border-subtle: #E7E1D7;
+    --accent-gold: #9A6A32;
+    --accent-gold-hover: #835624;
+    --dark-surface: #26231F;
+    --dark-card: #1E1C18;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F9F7F2;
+    color: #25231F;
+    font-family: var(--font-dm-sans), sans-serif;
+  }
+
+  body {
+    background-color: #F9F7F2;
+    color: #25231F;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #EBDDCF;
+    color: #25231F;
+  }
+
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: var(--font-noto-serif), serif;
+  }
+}
+
+/* Minimalist Editorial Utilities */
+.container-custom {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section-spacing {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Subtle micro interactions */
+.transition-smooth {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.border-warm {
+  border-color: #E7E1D7;
+}
+
+.border-warm-dark {
+  border-color: #38342E;
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9D2C6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4BAAB;
+}
